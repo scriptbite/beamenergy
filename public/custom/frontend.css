@@ -1,0 +1,21 @@
+
+
+.btn-primary-2{
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--contrast-color);
+}
+.btn-primary-2:hover {
+    background-color: color-mix(in srgb, var(--accent-color), var(--contrast-color) 20%);
+    color: var(--contrast-color);
+}
+
+.btn-outline-primary-2 {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+.btn-outline-primary-2:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--contrast-color);
+}
