@@ -221,7 +221,7 @@
                                     <!-- Submit Button -->
                                     <div class="row mb-3 d-flex align-items-end">
                                         <div class="col-md-12 text-end">
-                                            <button type="submit" class="btn btn-primary-2">Download Quotation</button>
+                                            <button type="submit" class="btn btn-primary-2">Request Quotation</button>
                                         </div>
                                     </div>
                                 </div>
