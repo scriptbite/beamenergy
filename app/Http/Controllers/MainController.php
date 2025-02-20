@@ -12,7 +12,7 @@ class MainController extends Controller
 
     }
 
-    public function getDetailsByPincode(Request $request, $pincode)
+    public function getDetailsByPincode($pincode)
     {
         // Make API request
         $response = Http::get("https://api.postalpincode.in/pincode/{$pincode}");

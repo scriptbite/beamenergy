@@ -104,7 +104,7 @@ class AppController extends MainController
 
                 //Calculation End
                 $pincodeDetails = $this->getDetailsByPincode($data['pincode']);
-                $city_name = (!empty($pincodeDetails['city'])) ?: $data['pincode'];
+                $city_name = (!empty($pincodeDetails['city'])) ? $pincodeDetails['city'] : $data['pincode'];
                 $details = [
                     'quotation_id' => $quotationId,
                     'full_name' => $data['full_name'],
