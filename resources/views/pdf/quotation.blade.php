@@ -56,7 +56,7 @@
                 <p style="line-height: 1;">
                     <strong>Name : </strong> <span>{{ ucfirst($details['full_name']) }}</span>
                     <br>
-                    <strong>Project Location : </strong> <span>{{ ucfirst($details['pincode']) }}</span>
+                    <strong>Project Location : </strong> <span>{{ ucfirst($details['city_name']) }}</span>
                     <br>
                     <br>
                     <strong>Quotation ID : </strong> <span>{{ $details['quotation_id'] }}</span>

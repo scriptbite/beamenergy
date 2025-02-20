@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\PDFController;
 use App\Models\Capacity;
 use App\Models\Inverter;
@@ -12,7 +13,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
-class AppController extends Controller
+class AppController extends MainController
 {
     private $data;
     public function __construct()
@@ -102,11 +103,13 @@ class AppController extends Controller
                 $total_project_price_without_gst = $total_project_price - $gst_amount;
 
                 //Calculation End
-
+                $pincodeDetails = $this->getDetailsByPincode($data['pincode']);
+                $city_name = (!empty($pincodeDetails['city'])) ?: $data['pincode'];
                 $details = [
                     'quotation_id' => $quotationId,
                     'full_name' => $data['full_name'],
                     'pincode' => $data['pincode'],
+                    'city_name' => $city_name,
                     'project_type' => $categories[$data['category_id']],
                     'project_capacity' => $resultCapacity->name,
                     'panel_name' => $resultPanel->name,

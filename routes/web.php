@@ -14,7 +14,7 @@ use App\Http\Controllers\Frontend\BookController;
 // });
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/test', [\App\Http\Controllers\PDFController::class, 'generateAndSaveQuotationPDF']);
+Route::get('/test/{pincode}', [\App\Http\Controllers\MainController::class, 'getDetailsByPincode']);
 
 //Calculator
 Route::get('/get-quote', [AppController::class, 'calculator'])->name('get_quote');

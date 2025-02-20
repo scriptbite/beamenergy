@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 
 class PDFController extends Controller
 {
-    public function generateAndSaveQuotationPDF($data = [])
+    public function generateAndSaveQuotationPDF($details = [])
     {
         //return view('pdf.quotation', compact('data'));
-        $pdf = Pdf::loadView('pdf.quotation', compact('data'))
+        $pdf = Pdf::loadView('pdf.quotation', compact('details'))
             ->setPaper('a4', 'portrait')
             ->setOptions([
                 'isHtml5ParserEnabled' => true,
