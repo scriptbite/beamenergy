@@ -59,6 +59,12 @@ class AppController extends MainController
                 $quote->subsidy_option = 0;
             }
 
+            //Subsidy Option Flag
+            $subsidyFlag = 1;
+            if($quote->subsidy_option == 0 || $data['category_id'] == 3) {
+                $subsidyFlag = 0;
+            }
+
             $quote->category_id = $data['category_id'];
             $quote->capacity_id = $data['capacity_id'];
             $quote->panel_id = $data['panel_id'];
@@ -120,6 +126,7 @@ class AppController extends MainController
                     'gst' => $gst_amount,
                     'project_total_cost' => $total_project_price,
                     'government_subsidy' => $resultCapacity->subsidy,
+                    'subsidy_flag' => $subsidyFlag,
                 ];
 
                 $pdf = Pdf::loadView('pdf.quotation', compact('details'))

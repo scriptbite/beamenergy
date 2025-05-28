@@ -9,6 +9,21 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Frontend\BookController;
 
+
+/**
+ * Admin Routes
+ */
+Route::middleware(['auth', 'role:1'])->group(function () {
+    Route::prefix('admin')->group(function () {
+        Route::get('/', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
+    });
+});
+
+
+
+
+
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });

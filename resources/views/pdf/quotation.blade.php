@@ -125,7 +125,7 @@
                 <td style="border: 1px solid black; padding: 0px 8px 2px 8px;">Other Accessories required to install</td>
                 <td style="border: 1px solid black; padding: 0px 8px 2px 8px;text-align: center;">Included</td>
             </tr>
-            <tr style="font-weight: bold;">
+            <tr>
                 <td style="border: 1px solid black; padding: 0px 8px 2px 8px;text-align: center;"></td>
                 <td style="border: 1px solid black; padding: 0px 8px 2px 8px;text-align: right;">PROJECT COST (&#8377;)</td>
                 <td style="border: 1px solid black; padding: 0px 8px 2px 8px;text-align: center;">{{ number_format($details['project_cost'], 2, '.', ',') }}</td>
@@ -136,8 +136,10 @@
             <p style="line-height: 1;">
                 <span><strong>TAXES & DUTIES : </strong>GST 13.8 % excluded of total project cost</span><br>
                 <span><strong>GST (&#8377;): </strong>{{ number_format($details['gst'], 2, '.', ',') }}</span><br>
-                <span><strong>Total Project Amount (&#8377;) : </strong>{{ number_format($details['project_total_cost'], 2, '.', ',') }}</span><br>
-                <span><strong>Government Subsidy (&#8377;) : </strong>{{ number_format($details['government_subsidy'], 2, '.', ',') }}</span><br>
+                <span><strong>Total Project Amount (&#8377;) : {{ number_format($details['project_total_cost'], 2, '.', ',') }}</strong></span><br>
+                @if($details['subsidy_flag'])
+                <span><strong>Government Subsidy (&#8377;) : {{ number_format($details['government_subsidy'], 2, '.', ',') }}</strong></span><br>
+                @endif
             </p>
         </div>
         <div>
